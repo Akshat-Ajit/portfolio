@@ -76,7 +76,7 @@ export default function HeroContent() {
             View Projects
           </a>
           <a
-            href="/Akshat fullstack CV.pdf"
+            href="/Akshat Ajit.pdf"
             download
             className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 hover:-translate-y-1 border ${
               theme === 'dark'

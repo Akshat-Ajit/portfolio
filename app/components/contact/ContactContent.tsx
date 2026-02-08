@@ -29,7 +29,7 @@ export default function ContactContent() {
       icon: "📄",
       label: "Resume",
       value: "Download CV",
-      href: "/Akshat fullstack CV.pdf"
+      href: "/Akshat Ajit.pdf"
     }
   ];
 

@@ -128,6 +128,18 @@ export default function HologramStage({ project }: { project: Project }) {
                 GitHub
               </a>
             )}
+            {!project.links.live && !project.links.github && (
+              <span
+                className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-300 animate-fade-in ${
+                  theme === 'dark'
+                    ? 'border border-cyan-400/40 text-cyan-300/80'
+                    : 'border border-cyan-500/40 text-cyan-700/80'
+                }`}
+                style={{ animationDelay: '500ms' }}
+              >
+                In Progress
+              </span>
+            )}
           </div>
         </div>
       </div>

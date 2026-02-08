@@ -58,6 +58,24 @@ export default function ProjectsContent() {
     },
     {
       id: "project-3",
+      title: "Smart Inventory & Order Management System (SIOMS)",
+      description: "In progress — business-grade inventory and order platform",
+      longDescription:
+        "A full-stack system to manage products, inventory, orders, vendors, and stock movement with role-based access, auditability, and real-time inventory consistency. Built with Clean Architecture, background services, and a React admin dashboard.",
+      icon: "🧠",
+      stack: [
+        "ASP.NET Core Web API",
+        "Clean Architecture",
+        "EF Core",
+        "SQL Server",
+        "React",
+        "Vite",
+        "TypeScript",
+      ],
+      links: {},
+    },
+    {
+      id: "project-4",
       title: "Inventory Management System",
       description: "Product tracking and stock level management",
       longDescription:
