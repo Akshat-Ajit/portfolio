@@ -1,0 +1,251 @@
+
+FUTURISTIC PERSONAL PORTFOLIO – FULL BLUEPRINT
+Author: Akshat
+Tech Stack: Next.js (App Router), React, TypeScript, Tailwind CSS, next-themes
+Target Audience: Recruiters, Hiring Managers, Tech Leads
+
+================================================
+GLOBAL DESIGN PHILOSOPHY
+================================================
+- Clean, futuristic, recruiter-focused
+- No clutter, strong visual hierarchy
+- Animations are subtle, purposeful, and smooth
+- Dark/Light mode is a core feature, not an afterthought
+- Every section is isolated, layered, and scalable
+
+------------------------------------------------
+GLOBAL LAYOUT RULES
+------------------------------------------------
+- Each section uses <section> with:
+  - position: relative
+  - isolate (Tailwind) to avoid stacking conflicts
+  - min-h-screen OR min-h-fit based on content
+
+- Background layers:
+  - Always absolute
+  - inset-0
+  - z-0
+
+- Content layers:
+  - relative
+  - z-10 or above
+
+- No background colors on body
+- All backgrounds are section-controlled
+
+================================================
+SECTION 1 – HERO (MOON ↔ SUN)
+================================================
+
+PURPOSE:
+- First impression
+- Show personality + technical polish
+- Immediately communicate theme-toggle capability
+
+STRUCTURE:
+<section id="hero">
+  <HeroBackground />   // z-0, absolute
+  <HeroContent />      // z-10, centered
+</section>
+
+--------------------------------
+HeroBackground
+--------------------------------
+- position: absolute
+- inset: 0
+- transition: colors, opacity, transform (700ms)
+
+Dark Mode:
+- Gradient: black → deep blue
+- Moon:
+  - position: top-right
+  - soft white/gray
+  - glow using box-shadow
+  - slow floating animation (translateY)
+
+Light Mode:
+- Gradient: sky blue → warm yellow
+- Sun:
+  - position: bottom-center
+  - large yellow/orange circle
+  - stronger glow
+  - rising animation (translateY from bottom)
+
+NO conditional CSS classes like light:
+Theme logic handled via JS + Tailwind base classes
+
+--------------------------------
+HeroContent
+--------------------------------
+- Name (large, bold)
+- Role (subtle, secondary)
+- CTA buttons:
+  - View Projects
+  - Download Resume
+- Theme toggle (icon-based)
+
+Transitions:
+- opacity fade-in
+- slight upward motion on load
+
+================================================
+SECTION 2 – ABOUT
+================================================
+
+PURPOSE:
+- Humanize the developer
+- Show intent, passion, and focus
+
+STRUCTURE:
+<section id="about">
+  <BackgroundGrid />
+  <ContentGrid />
+</section>
+
+--------------------------------
+Background
+--------------------------------
+- Subtle grid or noise texture
+- Low opacity
+- No distraction
+
+--------------------------------
+Content
+--------------------------------
+Left:
+- Short bio (3–4 lines)
+- Focus on learning + building
+
+Right:
+- Key highlights:
+  - Technologies
+  - Certifications
+  - Interests
+
+Animation:
+- Content slides in from left/right on scroll
+
+================================================
+SECTION 3 – SKILLS
+================================================
+
+PURPOSE:
+- Quickly show technical range
+
+STRUCTURE:
+<section id="skills">
+  <SkillsGrid />
+</section>
+
+--------------------------------
+SkillsGrid
+--------------------------------
+- Categorized:
+  - Frontend
+  - Backend
+  - Cloud
+  - Tools
+
+Each skill:
+- Icon
+- Name
+- Subtle hover glow
+
+Animation:
+- Scale up on hover
+- Slight glow pulse
+
+================================================
+SECTION 4 – PROJECTS (HOLOGRAM)
+================================================
+
+PURPOSE:
+- Main recruiter decision section
+- Showcase real work
+
+STRUCTURE:
+<section id="projects">
+  <HologramDisplay />
+  <ProjectRoulette />
+</section>
+
+--------------------------------
+HologramDisplay
+--------------------------------
+- Center floating card
+- Semi-transparent
+- Backdrop blur
+- Cyan/blue glow
+- Displays selected project
+
+--------------------------------
+ProjectRoulette
+--------------------------------
+- Horizontal wheel below hologram
+- Mouse scroll OR drag
+- Active project snaps to center
+- Selected project updates hologram
+
+Animation:
+- Smooth snapping
+- Glow intensifies on active item
+
+================================================
+SECTION 5 – CONTACT
+================================================
+
+PURPOSE:
+- Convert interest into action
+
+STRUCTURE:
+<section id="contact">
+  <ContactCard />
+</section>
+
+--------------------------------
+ContactCard
+--------------------------------
+- Glassmorphism card
+- Email
+- GitHub
+- LinkedIn
+- Resume download
+
+Animation:
+- Hover lift
+- Glow on focus
+
+================================================
+GLOBAL ANIMATIONS & TRANSITIONS
+================================================
+- Use Tailwind + CSS keyframes
+- Avoid heavy JS animations initially
+- Framer Motion optional later
+
+------------------------------------------------
+TIMING
+------------------------------------------------
+- Fast interactions: 150–200ms
+- Theme transitions: 500–700ms
+- Scroll animations: 400ms
+
+================================================
+ACCESSIBILITY & UX
+================================================
+- High contrast text
+- Focus-visible outlines
+- Keyboard navigable
+- Reduced motion support later
+
+================================================
+SCALABILITY NOTES
+================================================
+- Each section isolated
+- Easy to add:
+  - Blog
+  - Experience timeline
+  - Testimonials
+
+================================================
+END OF BLUEPRINT
+================================================

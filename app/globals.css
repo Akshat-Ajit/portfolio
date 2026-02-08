@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Holographic project card */
+.holo {
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.015));
+  border: 1px solid rgba(96,165,250,0.06);
+  box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+  position: relative;
+}
+.holo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.0) 50%, rgba(255,255,255,0.02) 100%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Make the hero celestial scale nicely on small screens */
+@media (max-width: 640px) {
+  .pointer-events-none.absolute.inset-0 > div { transform: scale(0.7) }
+}
+
+/* Section base rules per blueprint */
+section {
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
+}
+
+/* focus-visible for accessibility */
+a:focus-visible, button:focus-visible { outline: 2px solid transparent; box-shadow: 0 0 0 4px rgba(59,130,246,0.25); }
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Custom visuals */
+.animate-slow-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) }
+  50% { transform: translateY(-12px) }
+  100% { transform: translateY(0) }
+}
+
+/* Subtle glass backgrounds */
+.bg-white\/3 { background-color: rgba(255,255,255,0.03); }
+.bg-white\/5 { background-color: rgba(255,255,255,0.05); }
+
+/* Simple utility to soften scrollbars on the project carousel */
+.projects-scroll::-webkit-scrollbar { height: 8px; }
+.projects-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 999px; }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .max-w-6xl { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Smooth anchor scrolling fallback */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Nav hover glow effect */
+.hover\:glow:hover {
+  text-shadow: 0 0 20px rgba(34,211,238,0.5), 0 0 40px rgba(6,182,212,0.3);
+}
+
+/* Hero animations */
+@keyframes hero-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moon-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes sun-rise {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.animate-hero-fade-in {
+  animation: hero-fade-in 400ms ease-out forwards;
+}
+
+.animate-moon-float {
+  animation: moon-float 6s ease-in-out infinite;
+}
+
+.animate-sun-rise {
+  animation: sun-rise 800ms ease-out forwards 200ms;
+}
+
+/* Sun rise then set animation (total 5s) - rises from bottom center to mid-hero then returns */
+@keyframes sun-rise-set {
+  0% { transform: translateY(0) scale(0.9); opacity: 0.95; }
+  20% { opacity: 1; }
+  50% { transform: translateY(-45vh) scale(1.05); opacity: 1; }
+  100% { transform: translateY(0) scale(0.95); opacity: 1; }
+}
+
+.animate-sun-rise-set {
+  animation: sun-rise-set 5s ease-in-out;
+}
+
+/* Smooth 700ms transition helper for sun transform/opacity (matching moon speed) */
+.transition-sun {
+  transition: transform 700ms ease-in-out, opacity 700ms ease;
+}
+
+/* About section animations */
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 600ms ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 600ms ease-out forwards;
+}
+
+/* Skills section animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 500ms ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 500ms ease-out forwards;
+}
+
+/* Projects section animations */
+@keyframes scan-lines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scan-lines {
+  animation: scan-lines 8s linear infinite;
+}
+
+
