@@ -33,11 +33,31 @@ export default function ProjectsContent() {
       icon: "🔐",
       stack: ["ASP.NET Core", "ASP.NET Identity", "Entity Framework Core", "MySQL", "MVC"],
       links: {
-        github: "https://github.com/yourprofile/rbac-system",
+        github: "https://github.com/Akshat-Ajit/RBACWebApp",
       },
     },
     {
       id: "project-2",
+      title: "Enterprise Role-Based Management System (ERBMS)",
+      description: "Full-stack RBAC platform with admin approvals and audit logging",
+      longDescription:
+        "A full-stack RBAC platform built with ASP.NET Core and React using Clean Architecture. It includes JWT auth with Identity, users/roles/permissions CRUD, admin approval workflow for self-signup, audit logging, caching, and a React admin dashboard with validation and search.",
+      icon: "🔐",
+      stack: [
+        "ASP.NET Core (.NET 9)",
+        "EF Core",
+        "ASP.NET Identity",
+        "React",
+        "Vite",
+        "TypeScript",
+        "SQL Server LocalDB",
+      ],
+      links: {
+        github: "https://github.com/Akshat-Ajit/RBAC-Platform",
+      },
+    },
+    {
+      id: "project-3",
       title: "Inventory Management System",
       description: "Product tracking and stock level management",
       longDescription:
@@ -45,7 +65,7 @@ export default function ProjectsContent() {
       icon: "📦",
       stack: ["ASP.NET Core", "C#", "SQL", "REST APIs"],
       links: {
-        github: "https://github.com/yourprofile/inventory-system",
+        github: "https://github.com/Akshat-Ajit/Inventory-Management-System",
       },
     },
   ];

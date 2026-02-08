@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Akshat Portfolio",
   description: "My portfolio website",
+  icons: {
+    icon: [{ url: "/profile-placeholder.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({

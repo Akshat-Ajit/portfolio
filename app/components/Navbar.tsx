@@ -18,11 +18,8 @@ export function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md bg-white/85 dark:bg-black/60 shadow-lg' : 'backdrop-blur-sm bg-white/70 dark:bg-black/30'}`}>
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* NAV LEFT - Brand */}
-        <a href="#home" className="text-2xl font-extrabold text-gray-900 dark:text-white hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors duration-200 group relative">
-          Akshat
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-cyan-500 dark:from-cyan-400 to-transparent group-hover:w-full transition-all duration-300"></span>
-        </a>
+        {/* NAV LEFT - Brand (intentionally empty) */}
+        <div aria-hidden="true" className="w-8" />
 
         {/* NAV CENTER - Links */}
         <div className="hidden md:flex items-center gap-8">
